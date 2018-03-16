@@ -13,7 +13,7 @@ import torch.utils.data
 import torch.utils.data.distributed
 import torchvision.transforms as transforms
 import torchvision.models as models
-from MobileNet_v2 import MobileNetV2
+from model import MobileNetV2
 from read_data import ImageNetDataset
 
 model_names = sorted(name for name in models.__dict__
