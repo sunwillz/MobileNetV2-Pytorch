@@ -4,7 +4,7 @@ import math
 
 class Bottleneck(nn.Module):
 
-    def __init__(self, inplanes, outplanes, stride=1, expansion=1):
+    def __init__(self, inplanes, outplanes, stride=1, expansion=6):
         super(Bottleneck, self).__init__()
         self.stride = stride
         self.conv1 = nn.Conv2d(inplanes, inplanes*expansion, kernel_size=1, bias=False)
@@ -38,7 +38,7 @@ class Bottleneck(nn.Module):
 
 class MobileNetV2(nn.Module):
 
-    def __init__(self, block, layers, input_size=224, width_multi=1.,expansion=1 num_classes=1000):
+    def __init__(self, block, layers, input_size=224, width_multi=1.,expansion=6, num_classes=1000):
         self.inplanes = int(32*width_multi)
         super(MobileNetV2, self).__init__()
         self.conv1 = nn.Conv2d(3, int(32*width_multi), kernel_size=3, stride=2, padding=1, bias=False)
